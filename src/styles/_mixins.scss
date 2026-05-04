@@ -1,0 +1,81 @@
+@use "./variables" as *;
+
+// Responsive
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+// ✅ IMPORTANT (missing mixin - now added)
+@mixin section-padding {
+  padding: 80px 0;
+
+  @include tablet {
+    padding: 60px 0;
+  }
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
+
+// Layout
+@mixin container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+
+  @include mobile {
+    padding: 0 1rem;
+  }
+}
+
+// Flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Typography
+@mixin section-title {
+  font-family: $font-decorative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-dark;
+  text-align: center;
+
+  @include tablet {
+    font-size: 2rem;
+  }
+
+  @include mobile {
+    font-size: 1.75rem;
+  }
+}
+
+// Decorative
+@mixin decorative-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, $primary-gold, transparent);
+  margin: 1rem auto;
+}

@@ -1,0 +1,43 @@
+@import "../styles/shared";
+
+.scrollBtn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, $primary-gold, $primary-gold-dark);
+  border-radius: 50%;
+  @include flex-center;
+  color: $text-dark;
+  box-shadow: $shadow-gold;
+  z-index: $z-sticky;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all $transition-normal;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba($primary-gold, 0.4);
+  }
+
+  @include mobile {
+    width: 45px;
+    height: 45px;
+    bottom: 1.5rem;
+    left: 1.5rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

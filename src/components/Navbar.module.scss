@@ -1,0 +1,238 @@
+@import "../styles/shared";
+
+// Top Bar
+.topBar {
+  background: linear-gradient(90deg, $secondary-maroon-dark, $secondary-maroon);
+  color: $accent-cream;
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.topBarContent {
+  @include container;
+  @include flex-between;
+}
+
+.topBarLeft, .topBarRight {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.topBarItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.9;
+
+  svg {
+    color: $primary-gold;
+  }
+}
+
+// Navbar
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  background: rgba($bg-primary, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: all $transition-normal;
+
+  &.scrolled {
+    background: rgba($bg-primary, 0.98);
+    border-bottom-color: $border-light;
+    box-shadow: $shadow-sm;
+  }
+}
+
+.navContainer {
+  @include container;
+  @include flex-between;
+  height: 70px;
+
+  @include mobile {
+    height: 60px;
+  }
+}
+
+// Logo
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, $primary-gold, $primary-gold-dark);
+  border-radius: 50%;
+  @include flex-center;
+  font-family: $font-decorative;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: $text-dark;
+  flex-shrink: 0;
+
+  @include mobile {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+.logoText {
+  @include flex-column;
+}
+
+.logoTitle {
+  font-family: $font-decorative;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: $text-dark;
+  line-height: 1.2;
+
+  @include mobile {
+    font-size: 1.1rem;
+  }
+}
+
+.logoSubtitle {
+  font-size: 0.7rem;
+  color: $primary-gold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+
+  @include mobile {
+    font-size: 0.6rem;
+  }
+}
+
+// Desktop Navigation
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  @include laptop {
+    display: none;
+  }
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $text-medium;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color $transition-fast;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, $primary-gold, $primary-gold-dark);
+    transition: width $transition-normal;
+  }
+
+  &:hover {
+    color: $text-dark;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// CTA Button
+.ctaButton {
+  @include btn-primary;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.625rem 1.5rem;
+
+  @include laptop {
+    display: none;
+  }
+}
+
+// Mobile Menu Button
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: $text-dark;
+  cursor: pointer;
+  padding: 0.5rem;
+
+  @include laptop {
+    display: block;
+  }
+}
+
+// Mobile Menu
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba($bg-primary, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-light;
+  padding: 1.5rem;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-normal;
+  box-shadow: $shadow-md;
+
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 0.875rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: $text-dark;
+  border-radius: 8px;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba($primary-gold, 0.1);
+    color: $secondary-maroon;
+  }
+}
+
+.mobileCta {
+  @include btn-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}

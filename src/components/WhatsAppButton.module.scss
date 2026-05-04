@@ -1,0 +1,66 @@
+@import "../styles/shared";
+
+.whatsappBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  border-radius: 50%;
+  @include flex-center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: $z-sticky;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(-10px);
+    }
+  }
+
+  @include mobile {
+    width: 50px;
+    height: 50px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-5px);
+  background: $text-dark;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-fast;
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: $text-dark;
+  }
+}

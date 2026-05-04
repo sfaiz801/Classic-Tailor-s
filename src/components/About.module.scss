@@ -1,0 +1,239 @@
+@use "../styles/shared" as *;
+
+.about {
+  @include section-padding;
+}
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba($primary-gold, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+
+.container {
+  @include container;
+}
+
+// Header
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $primary-gold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  @include section-title;
+}
+
+.decorativeLine {
+  @include decorative-line;
+}
+
+// Content Layout
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+
+  @include laptop {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+// Image Side
+.imageSide {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease 0.2s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+}
+
+.imagePlaceholder {
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, $secondary-maroon-dark 0%, $bg-dark 100%);
+  @include flex-center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.imageText {
+  font-family: $font-decorative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-gold;
+  text-align: center;
+}
+
+.imageSubtext {
+  font-size: 1rem;
+  color: rgba($accent-cream, 0.7);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.experienceBadge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: linear-gradient(135deg, $primary-gold, $primary-gold-dark);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: $shadow-gold;
+  text-align: center;
+  min-width: 140px;
+
+  @include mobile {
+    right: 10px;
+    bottom: -15px;
+    padding: 1rem;
+    min-width: 120px;
+  }
+}
+
+.expNumber {
+  display: block;
+  font-family: $font-decorative;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: $text-dark;
+  line-height: 1;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+.expText {
+  font-size: 0.8rem;
+  color: $text-dark;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Text Side
+.textSide {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease 0.4s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.subtitle {
+  font-family: $font-decorative;
+  font-size: 1.75rem;
+  color: $text-dark;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+.text {
+  font-size: 1.05rem;
+  color: $text-medium;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+
+  strong {
+    color: $secondary-maroon;
+    font-weight: 600;
+  }
+
+  @include mobile {
+    font-size: 1rem;
+  }
+}
+
+// Features Grid
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.featureCard {
+  padding: 1.5rem;
+  background: $bg-card;
+  border-radius: 12px;
+  border: 1px solid $border-light;
+  transition: all $transition-normal;
+
+  &:hover {
+    border-color: $border-gold;
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+.featureIcon {
+  color: $primary-gold;
+  margin-bottom: 0.75rem;
+}
+
+.featureTitle {
+  font-family: $font-primary;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 0.5rem;
+}
+
+.featureDesc {
+  font-size: 0.9rem;
+  color: $text-light;
+  line-height: 1.5;
+}

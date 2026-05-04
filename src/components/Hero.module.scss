@@ -1,0 +1,313 @@
+@import "../styles/shared";
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  @include flex-center;
+  overflow: hidden;
+  background: linear-gradient(135deg, $bg-dark 0%, $secondary-maroon-dark 50%, $bg-dark 100%);
+
+  @include tablet {
+    min-height: 90vh;
+  }
+}
+
+// Background
+.heroBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba($primary-gold, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba($secondary-maroon, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba($primary-gold, 0.05) 0%, transparent 50%);
+  background-size: 100% 100%;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba($bg-dark, 0.3) 0%, transparent 30%, transparent 70%, rgba($bg-dark, 0.5) 100%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+// Floating Elements
+.floatingElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.floatItem {
+  position: absolute;
+  color: rgba($primary-gold, 0.15);
+  animation: float 6s ease-in-out infinite;
+}
+
+.float1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.float2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.float3 {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+// Hero Content
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+// Badge
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba($primary-gold, 0.15);
+  border: 1px solid rgba($primary-gold, 0.3);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: $primary-gold;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+
+  @include mobile {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.badgeIcon {
+  color: $primary-gold;
+  font-size: 1rem;
+}
+
+// Title
+.title {
+  margin-bottom: 1rem;
+
+  @include mobile {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.titleLine1 {
+  display: block;
+  font-family: $font-decorative;
+  font-size: 4rem;
+  font-weight: 400;
+  color: $accent-cream;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 3rem;
+    letter-spacing: 5px;
+  }
+
+  @include mobile {
+    font-size: 2.25rem;
+    letter-spacing: 3px;
+  }
+}
+
+.titleLine2 {
+  display: block;
+  font-family: $font-decorative;
+  font-size: 6rem;
+  font-weight: 800;
+  @include gold-text;
+  line-height: 1.1;
+  margin-top: -0.5rem;
+
+  @include tablet {
+    font-size: 4.5rem;
+  }
+
+  @include mobile {
+    font-size: 3.5rem;
+  }
+}
+
+// Subtitle
+.subtitle {
+  font-family: $font-decorative;
+  font-size: 1.5rem;
+  color: rgba($accent-cream, 0.8);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  letter-spacing: 3px;
+
+  @include tablet {
+    font-size: 1.25rem;
+  }
+
+  @include mobile {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+}
+
+// Description
+.description {
+  font-size: 1.1rem;
+  color: rgba($accent-cream, 0.7);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  strong {
+    color: $primary-gold;
+    font-weight: 600;
+  }
+
+  @include mobile {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// CTA Group
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  @include btn-primary;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnOutline {
+  @include btn-outline;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $accent-cream;
+  border-color: rgba($accent-cream, 0.5);
+
+  &:hover {
+    background: $accent-cream;
+    color: $text-dark;
+    border-color: $accent-cream;
+  }
+}
+
+// Location Tag
+.locationTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba($accent-cream, 0.6);
+  font-size: 0.9rem;
+}
+
+.locationDot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+// Scroll Indicator
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba($accent-cream, 0.5);
+  animation: fadeIn 1s ease 1s both;
+
+  &:hover {
+    color: $primary-gold;
+  }
+}
+
+.scrollText {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.scrollIcon {
+  animation: float 2s ease-in-out infinite;
+}
+
+// Side Stats
+.sideStats {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include laptop {
+    display: none;
+  }
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-family: $font-decorative;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $primary-gold;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: rgba($accent-cream, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statDivider {
+  width: 1px;
+  height: 30px;
+  background: rgba($primary-gold, 0.3);
+  margin: 0 auto;
+}

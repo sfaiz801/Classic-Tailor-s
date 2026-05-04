@@ -1,0 +1,265 @@
+// ============================================
+// Classic Tailors - Shared Styles
+// Variables + Mixins (Single Source)
+// ============================================
+
+// =======================
+// COLORS
+// =======================
+$primary-gold: #d4af37;
+$primary-gold-light: #f4e4bc;
+$primary-gold-dark: #b8941f;
+
+$secondary-maroon: #800020;
+$secondary-maroon-light: #a04060;
+$secondary-maroon-dark: #5c0015;
+
+$accent-cream: #fff8e7;
+$accent-ivory: #fffff0;
+$accent-warm-white: #faf9f6;
+
+$text-dark: #2c1810;
+$text-medium: #5c4033;
+$text-light: #8b7355;
+$text-muted: #a09080;
+
+$bg-primary: #fff8e7;
+$bg-secondary: #fffff0;
+$bg-dark: #2c1810;
+$bg-card: #ffffff;
+
+$border-light: #e8dcc8;
+$border-medium: #d4c4a8;
+$border-gold: #d4af37;
+
+// =======================
+// SHADOWS
+// =======================
+$shadow-sm: 0 2px 8px rgba(44, 24, 16, 0.08);
+$shadow-md: 0 4px 20px rgba(44, 24, 16, 0.12);
+$shadow-lg: 0 8px 40px rgba(44, 24, 16, 0.15);
+$shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.25);
+
+// =======================
+// TYPOGRAPHY
+// =======================
+$font-primary: "Poppins", "Segoe UI", sans-serif;
+$font-decorative: "Playfair Display", Georgia, serif;
+$font-hindi: "Noto Sans Devanagari", sans-serif;
+
+// =======================
+// BREAKPOINTS
+// =======================
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1200px;
+$wide: 1400px;
+
+// =======================
+// TRANSITIONS
+// =======================
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// =======================
+// Z-INDEX
+// =======================
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-modal: 300;
+$z-toast: 400;
+
+// ============================================
+// MIXINS
+// ============================================
+
+// Responsive
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// ✅ SECTION PADDING (IMPORTANT FIX)
+@mixin section-padding {
+  padding: 80px 0;
+
+  @include tablet {
+    padding: 60px 0;
+  }
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
+
+// Layout
+@mixin container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+
+  @include mobile {
+    padding: 0 1rem;
+  }
+}
+
+// Flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Typography
+@mixin section-title {
+  font-family: $font-decorative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-dark;
+  text-align: center;
+  margin-bottom: 0.5rem;
+
+  @include tablet {
+    font-size: 2rem;
+  }
+
+  @include mobile {
+    font-size: 1.75rem;
+  }
+}
+
+@mixin section-subtitle {
+  font-size: 1.1rem;
+  color: $text-light;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mobile {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// UI Styles
+@mixin gold-text {
+  background: linear-gradient(
+    135deg,
+    $primary-gold 0%,
+    $primary-gold-dark 50%,
+    $primary-gold 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin decorative-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, $primary-gold, transparent);
+  margin: 1rem auto;
+}
+
+// Buttons
+@mixin btn-primary {
+  background: linear-gradient(135deg, $primary-gold, $primary-gold-dark);
+  color: $text-dark;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-gold;
+  }
+}
+
+@mixin btn-outline {
+  background: transparent;
+  color: $primary-gold;
+  border: 2px solid $primary-gold;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: $primary-gold;
+    color: $text-dark;
+  }
+}
+
+// Card
+@mixin card {
+  background: $bg-card;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: $shadow-sm;
+  border: 1px solid $border-light;
+  transition: all $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+  }
+}
+
+// Scrollbar
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-secondary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary-gold;
+    border-radius: 4px;
+  }
+}

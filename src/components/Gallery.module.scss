@@ -1,0 +1,246 @@
+@import "../styles/shared";
+
+.gallery {
+  @include section-padding;
+  background: $bg-secondary;
+}
+
+.container {
+  @include container;
+}
+
+// Header
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $primary-gold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  @include section-title;
+}
+
+.subtitle {
+  @include section-subtitle;
+}
+
+.decorativeLine {
+  @include decorative-line;
+}
+
+// Filter
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.2s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filterBtn {
+  padding: 0.625rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: $text-medium;
+  background: $bg-card;
+  border: 1px solid $border-light;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $primary-gold;
+    color: $text-dark;
+  }
+
+  &.active {
+    background: linear-gradient(135deg, $primary-gold, $primary-gold-dark);
+    color: $text-dark;
+    border-color: $primary-gold;
+    font-weight: 600;
+  }
+
+  @include mobile {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+// Gallery Grid
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.galleryItem {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    .imageWrapper {
+      transform: translateY(-5px);
+      box-shadow: $shadow-lg;
+    }
+
+    .overlay {
+      opacity: 1;
+    }
+
+    .image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  transition: all $transition-normal;
+  box-shadow: $shadow-sm;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba($bg-dark, 0.6);
+  @include flex-center;
+  color: $accent-cream;
+  opacity: 0;
+  transition: opacity $transition-normal;
+}
+
+.itemInfo {
+  padding: 1rem 0.5rem;
+}
+
+.itemCategory {
+  font-size: 0.8rem;
+  color: $primary-gold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.itemTitle {
+  font-family: $font-decorative;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin: 0.25rem 0;
+}
+
+.itemDesc {
+  font-size: 0.875rem;
+  color: $text-light;
+}
+
+// Lightbox
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba($bg-dark, 0.95);
+  z-index: $z-modal;
+  @include flex-center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba($accent-cream, 0.1);
+  border: 1px solid rgba($accent-cream, 0.2);
+  color: $accent-cream;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  @include flex-center;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba($accent-cream, 0.2);
+    transform: rotate(90deg);
+  }
+}
+
+.lightboxContent {
+  max-width: 900px;
+  width: 100%;
+  animation: fadeInUp 0.4s ease;
+}
+
+.lightboxImage {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.lightboxInfo {
+  text-align: center;
+  margin-top: 1.5rem;
+
+  h3 {
+    font-family: $font-decorative;
+    font-size: 1.5rem;
+    color: $accent-cream;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: rgba($accent-cream, 0.7);
+  }
+}

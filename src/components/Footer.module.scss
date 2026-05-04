@@ -1,0 +1,228 @@
+@import "../styles/shared";
+
+.footer {
+  background: linear-gradient(135deg, $bg-dark 0%, darken($bg-dark, 5%) 100%);
+  color: $accent-cream;
+  padding-top: 4rem;
+
+  @include mobile {
+    padding-top: 3rem;
+  }
+}
+
+.container {
+  @include container;
+}
+
+// Footer Grid
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba($accent-cream, 0.1);
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+// Brand Column
+.brandColumn {
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.logoIcon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, $primary-gold, $primary-gold-dark);
+  border-radius: 50%;
+  @include flex-center;
+  font-family: $font-decorative;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: $text-dark;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: $font-decorative;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: $accent-cream;
+  line-height: 1.2;
+}
+
+.brandTagline {
+  font-size: 0.8rem;
+  color: $primary-gold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brandDesc {
+  font-size: 0.95rem;
+  color: rgba($accent-cream, 0.7);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+// Social Links
+.socialLinks {
+  display: flex;
+  gap: 0.75rem;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba($accent-cream, 0.08);
+  border: 1px solid rgba($accent-cream, 0.15);
+  @include flex-center;
+  color: rgba($accent-cream, 0.7);
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $primary-gold;
+    border-color: $primary-gold;
+    color: $text-dark;
+    transform: translateY(-3px);
+  }
+}
+
+// Links Column
+.linksColumn {
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.columnTitle {
+  font-family: $font-decorative;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $accent-cream;
+  margin-bottom: 1.25rem;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link {
+  font-size: 0.95rem;
+  color: rgba($accent-cream, 0.7);
+  transition: all $transition-fast;
+  display: inline-block;
+
+  &:hover {
+    color: $primary-gold;
+    transform: translateX(5px);
+
+    @include mobile {
+      transform: translateX(0);
+    }
+  }
+}
+
+// Contact Column
+.contactColumn {
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: rgba($accent-cream, 0.7);
+
+  svg {
+    color: $primary-gold;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  a {
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary-gold;
+    }
+  }
+
+  @include mobile {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Bottom Bar
+.bottomBar {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: rgba($accent-cream, 0.5);
+}
+
+.credit {
+  font-size: 0.9rem;
+  color: rgba($accent-cream, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.heart {
+  color: #ef4444;
+  animation: pulse 1.5s ease infinite;
+}

@@ -1,0 +1,54 @@
+// Classic Tailors - Color Palette
+$primary-gold: #D4AF37;
+$primary-gold-light: #F4E4BC;
+$primary-gold-dark: #B8941F;
+
+$secondary-maroon: #800020;
+$secondary-maroon-light: #A04060;
+$secondary-maroon-dark: #5C0015;
+
+$accent-cream: #FFF8E7;
+$accent-ivory: #FFFFF0;
+$accent-warm-white: #FAF9F6;
+
+$text-dark: #2C1810;
+$text-medium: #5C4033;
+$text-light: #8B7355;
+$text-muted: #A09080;
+
+$bg-primary: #FFF8E7;
+$bg-secondary: #FFFFF0;
+$bg-dark: #2C1810;
+$bg-card: #FFFFFF;
+
+$border-light: #E8DCC8;
+$border-medium: #D4C4A8;
+$border-gold: #D4AF37;
+
+$shadow-sm: 0 2px 8px rgba(44, 24, 16, 0.08);
+$shadow-md: 0 4px 20px rgba(44, 24, 16, 0.12);
+$shadow-lg: 0 8px 40px rgba(44, 24, 16, 0.15);
+$shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.25);
+
+// Typography
+$font-primary: 'Poppins', 'Segoe UI', sans-serif;
+$font-decorative: 'Playfair Display', Georgia, serif;
+$font-hindi: 'Noto Sans Devanagari', sans-serif;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1200px;
+$wide: 1400px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index layers
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-modal: 300;
+$z-toast: 400;
