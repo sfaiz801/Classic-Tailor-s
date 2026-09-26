@@ -93,11 +93,15 @@ classic-tailors/
 ## Shop Details
 
 - **Name**: Classic Tailor's
-- **Owner**: Masoom Ahmad Siddique
-- **Address**: Main Market, Mirganj, Gopalganj, Bihar - 841438
-- **Phone**: +91 98765 43210
-- **Email**: classictailors.mirganj@gmail.com
-- **Established**: 1995
+- **Owner**: Massom Ahmad (Masoom Ahmad Siddique)
+- **Specialization**: Men's Tailoring Specialist (सिर्फ पुरुषों का Tailor)
+- **Address**: Ganesh Cinema Road, Kalyani Chowk, Nagar Parishad Gali, Mirganj, Gopalganj, Bihar - 841438
+- **Phone**: +91 9431255424
+- **Alt / WhatsApp**: +91 9905169149
+- **Instagram**: [@classic_tailors_mirganj](https://www.instagram.com/classic_tailors_mirganj/)
+- **Email**: classictailors.mir@gmail.com
+- **Established**: 1995 (31+ Years of Excellence)
+- **Timings**: 10:00 AM – 9:00 PM (All 7 Days Open)
 
 ## License
 

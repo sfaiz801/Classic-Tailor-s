@@ -12,91 +12,40 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
+import InstagramOffer from "@/components/InstagramOffer";
+import InstallAppBanner from "@/components/InstallAppBanner";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1500);
+    const timer = setTimeout(() => setIsLoading(false), 1200);
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return (
-      <div className="loading-screen">
-        <div className="loading-content">
-          <div className="loading-logo">CT</div>
-          <div className="loading-text">Classic Tailor&apos;s</div>
-          <div className="loading-bar">
-            <div className="loading-progress"></div>
+      <div className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#2C1810] via-[#4A0E17] to-[#2C1810] flex items-center justify-center">
+        <div className="text-center flex flex-col items-center">
+          <div className="w-20 h-20 rounded-full gold-gradient-bg flex items-center justify-center font-serif text-3xl font-black text-[#2C1810] shadow-2xl mb-4 animate-bounce">
+            CT
+          </div>
+          <div className="font-serif text-2xl font-bold text-[#F4E4BC] tracking-widest mb-4">
+            Classic Tailor&apos;s
+          </div>
+          <div className="w-48 h-1 bg-[#D4AF37]/20 rounded-full overflow-hidden">
+            <div className="w-full h-full gold-gradient-bg animate-pulse"></div>
           </div>
         </div>
-        <style jsx>{`
-          .loading-screen {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(135deg, #2C1810 0%, #5C0015 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-          }
-          .loading-content {
-            text-align: center;
-          }
-          .loading-logo {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #D4AF37, #B8941F);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: #2C1810;
-            margin: 0 auto 1rem;
-            animation: pulse 1.5s ease infinite;
-          }
-          .loading-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #D4AF37;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-          }
-          .loading-bar {
-            width: 200px;
-            height: 3px;
-            background: rgba(212, 175, 55, 0.2);
-            border-radius: 3px;
-            overflow: hidden;
-            margin: 0 auto;
-          }
-          .loading-progress {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #D4AF37, #F4E4BC);
-            animation: loading 1.5s ease-in-out forwards;
-          }
-          @keyframes loading {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-          }
-          @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-          }
-        `}</style>
       </div>
     );
   }
 
   return (
-    <main>
+    <main className="min-h-screen bg-[#FFF8E7] text-[#2C1810]">
       <Navbar />
       <Hero />
+      <InstagramOffer />
       <About />
       <Stats />
       <Services />
@@ -106,6 +55,7 @@ export default function Home() {
       <Footer />
       <WhatsAppButton />
       <ScrollToTop />
+      <InstallAppBanner />
     </main>
   );
 }

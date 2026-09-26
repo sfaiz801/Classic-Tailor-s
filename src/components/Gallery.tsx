@@ -1,58 +1,46 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
 import { galleryItems, categories } from "@/data/gallery";
-import styles from "./Gallery.module.scss";
 
 export default function Gallery() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const filteredItems = activeCategory === "All" 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "All"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className={styles.gallery} ref={sectionRef}>
-      <div className={styles.container}>
+    <section id="gallery" className="py-20 bg-[#FFFFF0] px-4">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className={`${styles.header} ${isVisible ? styles.visible : ""}`}>
-          <span className={styles.label}>Portfolio</span>
-          <h2 className={styles.title}>Our Gallery</h2>
-          <p className={styles.subtitle}>
-            Explore our finest creations — each piece tells a story of craftsmanship
+        <div className="text-center mb-12">
+          <span className="text-xs uppercase font-bold text-[#B8941F] tracking-[0.25em] block mb-2">
+            Master Creations
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C1810]">
+            Our Gallery
+          </h2>
+          <p className="text-sm sm:text-base text-[#5C4033] mt-3 max-w-xl mx-auto">
+            Explore our handcrafted bespoke men&apos;s attire — each stitch tailored for distinction.
           </p>
-          <div className={styles.decorativeLine}></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-4"></div>
         </div>
 
-        {/* Category Filter */}
-        <div className={`${styles.filterContainer} ${isVisible ? styles.visible : ""}`}>
+        {/* Category Filters */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {categories.map((category) => (
             <button
               key={category}
-              className={`${styles.filterBtn} ${activeCategory === category ? styles.active : ""}`}
               onClick={() => setActiveCategory(category)}
+              className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                activeCategory === category
+                  ? "gold-gradient-bg text-[#2C1810] shadow-md scale-105"
+                  : "bg-white text-[#5C4033] border border-[#E8DCC8] hover:border-[#D4AF37]"
+              }`}
             >
               {category}
             </button>
@@ -60,50 +48,71 @@ export default function Gallery() {
         </div>
 
         {/* Gallery Grid */}
-        <div className={styles.galleryGrid}>
-          {filteredItems.map((item, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {filteredItems.map((item) => (
             <div
               key={item.id}
-              className={`${styles.galleryItem} ${isVisible ? styles.visible : ""}`}
-              style={{ transitionDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedImage(item.id)}
+              className="bg-white rounded-3xl overflow-hidden border border-[#E8DCC8] hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col"
             >
-              <div className={styles.imageWrapper}>
-                <img 
-                  src={item.image} 
+              <div className="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                <img
+                  src={item.image}
                   alt={item.title}
-                  className={styles.image}
                   loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className={styles.overlay}>
-                  <ZoomIn size={24} />
+                <div className="absolute inset-0 bg-[#2C1810]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-white/90 text-[#2C1810] flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                    <ZoomIn size={22} />
+                  </div>
                 </div>
               </div>
-              <div className={styles.itemInfo}>
-                <span className={styles.itemCategory}>{item.category}</span>
-                <h3 className={styles.itemTitle}>{item.title}</h3>
-                <p className={styles.itemDesc}>{item.description}</p>
+              <div className="p-6">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-[#B8941F] bg-[#D4AF37]/15 px-2.5 py-1 rounded-md">
+                  {item.category}
+                </span>
+                <h3 className="font-serif text-lg font-bold text-[#2C1810] mt-3 mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-[#8B7355] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox Modal */}
       {selectedImage !== null && (
-        <div className={styles.lightbox} onClick={() => setSelectedImage(null)}>
-          <button className={styles.closeBtn} onClick={() => setSelectedImage(null)}>
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white/80 hover:text-white p-2 rounded-full bg-white/10"
+            aria-label="Close"
+          >
             <X size={28} />
           </button>
-          <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
-            <img 
-              src={galleryItems.find(i => i.id === selectedImage)?.image} 
-              alt={galleryItems.find(i => i.id === selectedImage)?.title}
-              className={styles.lightboxImage}
+          <div
+            className="max-w-3xl w-full bg-[#2C1810] rounded-3xl overflow-hidden border border-[#D4AF37]/50 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={galleryItems.find((i) => i.id === selectedImage)?.image}
+              alt={galleryItems.find((i) => i.id === selectedImage)?.title}
+              className="w-full max-h-[70vh] object-contain bg-black"
             />
-            <div className={styles.lightboxInfo}>
-              <h3>{galleryItems.find(i => i.id === selectedImage)?.title}</h3>
-              <p>{galleryItems.find(i => i.id === selectedImage)?.description}</p>
+            <div className="p-6 bg-gradient-to-t from-[#1A0E0A] to-[#2C1810] text-white">
+              <h3 className="font-serif text-2xl font-bold text-[#F4E4BC]">
+                {galleryItems.find((i) => i.id === selectedImage)?.title}
+              </h3>
+              <p className="text-sm text-white/80 mt-1">
+                {galleryItems.find((i) => i.id === selectedImage)?.description}
+              </p>
             </div>
           </div>
         </div>

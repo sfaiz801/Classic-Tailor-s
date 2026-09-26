@@ -1,6 +1,7 @@
 export interface Service {
   id: number;
   title: string;
+  hindiTitle: string;
   description: string;
   price: string;
   icon: string;
@@ -10,50 +11,92 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    title: "Sherwani Stitching",
-    description: "Handcrafted sherwanis with intricate embroidery and perfect fitting for weddings and special occasions.",
-    price: "Starting from ₹3,500",
-    icon: "crown",
-    features: ["Premium Fabric Selection", "Custom Embroidery", "Perfect Fitting Guarantee", "5-7 Days Delivery"]
+    title: "Coat-Pant Suit",
+    hindiTitle: "कोट-पैंट सूट",
+    description: "Executive two-piece suits tailored with precision, perfect shoulder cut, and premium internal canvas structuring.",
+    price: "Custom Quote",
+    icon: "briefcase",
+    features: ["Raymond & Siyaram's Fabric", "Custom Lapel Styles", "Precision Fit Guarantee", "Formal & Business Wear"]
   },
   {
     id: 2,
-    title: "Kurta Pajama",
-    description: "Elegant kurta pajama sets tailored with precision for festivals, functions, and daily wear.",
-    price: "Starting from ₹800",
-    icon: "shirt",
-    features: ["Multiple Style Options", "Cotton & Silk Fabrics", "Traditional & Modern Designs", "3-4 Days Delivery"]
+    title: "3 Piece Suit",
+    hindiTitle: "3 पीस सूट",
+    description: "Royal 3-piece formal suit with tailored waistcoat for grand weddings, receptions, and red-carpet events.",
+    price: "Custom Quote",
+    icon: "crown",
+    features: ["Tailored Waistcoat", "Premium Italian Cut", "Slim & Regular Fitting", "High-Grade Stitching"]
   },
   {
     id: 3,
-    title: "Salwar Kameez",
-    description: "Beautifully stitched salwar kameez for women with detailed work and comfortable fitting.",
-    price: "Starting from ₹1,200",
-    icon: "sparkles",
-    features: ["Designer Patterns", "Churidar & Patiala Styles", "Dupatta Matching", "4-5 Days Delivery"]
+    title: "Royal Sherwani",
+    hindiTitle: "शेरवानी",
+    description: "Handcrafted groom and wedding sherwanis designed for a majestic Indian royal look with perfect drape.",
+    price: "Custom Quote",
+    icon: "crown",
+    features: ["Wedding & Groom Specialist", "Custom Embroidery & Cut", "Traditional Royal Fit", "Accessory Coordination"]
   },
   {
     id: 4,
-    title: "Suit & Blazer",
-    description: "Professional suit and blazer tailoring for a sharp, sophisticated look.",
-    price: "Starting from ₹5,500",
-    icon: "briefcase",
-    features: ["Italian & Indian Fabrics", "Lapel Customization", "Perfect Shoulder Fit", "5-6 Days Delivery"]
+    title: "Kurta-Pajama",
+    hindiTitle: "कुर्ता-पाजामा",
+    description: "Classic Indian kurta pajama and churidar stitched with ultra-comfortable cotton, linen, or festive silks.",
+    price: "Custom Quote",
+    icon: "shirt",
+    features: ["Pathani & Straight Cuts", "Churidar / Dhoti Pairing", "Festive & Daily Wear", "Breathable Fabrics"]
   },
   {
     id: 5,
-    title: "Alteration & Repair",
-    description: "Expert alteration services to make your existing clothes fit perfectly.",
-    price: "Starting from ₹150",
-    icon: "scissors",
-    features: ["Size Adjustments", "Zip Replacement", "Button Fixing", "Same Day Service"]
+    title: "Bandi / Nehru Jacket",
+    hindiTitle: "बंडी",
+    description: "Traditional sleeveless Nehru jackets and Bandis that add an instant royal touch over any kurta or shirt.",
+    price: "Custom Quote",
+    icon: "sparkles",
+    features: ["Mandarin Collar Cut", "Custom Pocket Styling", "Silk, Tweed & Jacquard", "Festive Occasions"]
   },
   {
     id: 6,
-    title: "Wedding Collection",
-    description: "Complete wedding attire solutions including lehengas, sherwanis, and family matching outfits.",
+    title: "Shirt-Pant",
+    hindiTitle: "शर्ट-पैंट",
+    description: "Everyday formal and casual shirts and trousers stitched strictly to your personal body measurements.",
+    price: "Custom Quote",
+    icon: "scissors",
+    features: ["Custom Collar & Cuffs", "Pleated or Flat Front Pants", "Wrinkle-Resistant Fit", "Daily & Office Comfort"]
+  },
+  {
+    id: 7,
+    title: "Blazer",
+    hindiTitle: "ब्लेज़र",
+    description: "Sharp casual and semi-formal blazers that pair effortlessly with jeans, chinos, or formal trousers.",
+    price: "Custom Quote",
+    icon: "award",
+    features: ["Single & Double Breasted", "Custom Button Accents", "Lightweight Canvas", "Modern Silhouette"]
+  },
+  {
+    id: 8,
+    title: "Safari Suit",
+    hindiTitle: "सफारी सूट",
+    description: "Timeless traditional safari suits designed for comfort, respect, and effortless vintage authority.",
+    price: "Custom Quote",
+    icon: "shirt",
+    features: ["Classic Safari Pockets", "Belt & Shoulder Flaps", "Durable All-Day Wear", "Distinguished Look"]
+  },
+  {
+    id: 9,
+    title: "Wedding / Party Wear",
+    hindiTitle: "वेडिंग / पार्टी वियर",
+    description: "Complete men's wedding wardrobe consultation and customized luxury tailoring for the entire groom party.",
     price: "Custom Quote",
     icon: "heart",
-    features: ["Bridal Lehengas", "Groom Sherwanis", "Family Coordination", "Premium Packaging"]
+    features: ["Groom & Family Coordination", "Designer Fabrics", "Priority Delivery", "Final Fitting Sessions"]
+  },
+  {
+    id: 10,
+    title: "Casual Wear",
+    hindiTitle: "केजुअल वियर",
+    description: "Comfortable and stylish casual shirts, linen trousers, and semi-formal men's wear tailored to perfection.",
+    price: "Custom Quote",
+    icon: "users",
+    features: ["Relaxed Body Fitting", "Breathable Linens & Cottons", "Trendy Cuts", "Durable Stitching"]
   }
 ];

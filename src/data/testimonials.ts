@@ -11,41 +11,41 @@ export const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Rajesh Kumar",
-    location: "Gopalganj, Bihar",
+    location: "Mirganj, Gopalganj",
     rating: 5,
-    text: "Classic Tailors ne meri shaadi ke liye sherwani itni khoobsurat banayi. Har kisi ne taarif ki. Masoom bhai ka kaam lajawab hai!",
+    text: "Classic Tailor's ne meri shaadi ke liye sherwani aur 3-piece suit itna shaandar banaya ki sabhi doston ne tareef ki. Massom bhai ki fitting ka koi jawab nahi!",
     date: "March 2026"
   },
   {
     id: 2,
-    name: "Priya Sharma",
-    location: "Patna, Bihar",
+    name: "Mohammad Imran",
+    location: "Siwan, Bihar",
     rating: 5,
-    text: "Mere salwar kameez ka fitting bilkul perfect tha. Fabric quality aur stitching dono bahut acchi thi. Highly recommended!",
+    text: "Kurta-pajama aur Bandi ka cut bilkul royal tha. Delivery bhi waqt par hui. Mirganj me purushon ke kapde silwane ke liye sabse behtareen dukaan hai.",
     date: "February 2026"
   },
   {
     id: 3,
-    name: "Mohammad Imran",
-    location: "Siwan, Bihar",
+    name: "Alok Singh",
+    location: "Hathua, Gopalganj",
     rating: 5,
-    text: "Kurta pajama ka design aur fitting dono zabardast thi. Time par delivery bhi ho gayi. Bahut hi professional service.",
+    text: "Raymond ke kapde se coat-pant banwaya tha. Fitting bilkul showroom jaisi custom aayi. 31 saal ka anubhav sach me dikhta hai.",
     date: "January 2026"
   },
   {
     id: 4,
-    name: "Sunita Devi",
-    location: "Mirganj, Gopalganj",
+    name: "Dharmendra Yadav",
+    location: "Mirganj, Bihar",
     rating: 5,
-    text: "Meri beti ki shaadi ke liye lehenga stitch karwaya. Itni sundar embroidery thi ki sab log dekh kar hairan reh gaye.",
+    text: "Instagram par dekh kar gaya tha, ₹100 ki chhoot bhi mili aur shirt-pant ki silai bhi bahut behtareen hui. Highly recommended!",
     date: "December 2025"
   },
   {
     id: 5,
     name: "Faiz Siddique",
-    location: "Chapra, Bihar",
-    rating: 4,
-    text: "Blazer ka fitting aur fabric quality dono acchi thi. Price bhi reasonable hai. Next time bhi yahin se banwaunga.",
+    location: "Gopalganj, Bihar",
+    rating: 5,
+    text: "Blazer aur Safari suit dono yahan se banwaye. Quality aur stitching dono top-notch hain. Massom Ahmad ji ka vyavhaar bhi bahut accha hai.",
     date: "April 2026"
   }
 ];

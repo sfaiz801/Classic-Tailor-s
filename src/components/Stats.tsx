@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { stats } from "@/data/shop";
-import styles from "./Stats.module.scss";
 
 export default function Stats() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -17,7 +16,7 @@ export default function Stats() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -57,17 +56,25 @@ export default function Stats() {
   }, [isVisible]);
 
   return (
-    <section className={styles.stats} ref={sectionRef}>
-      <div className={styles.container}>
-        <div className={styles.statsGrid}>
+    <section
+      ref={sectionRef}
+      className="py-16 bg-gradient-to-r from-[#2C1810] via-[#5C0015] to-[#2C1810] text-[#FFF8E7] px-4 relative overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((stat, index) => (
-            <div key={index} className={`${styles.statCard} ${isVisible ? styles.visible : ""}`}>
-              <div className={styles.statNumber}>
+            <div
+              key={index}
+              className="text-center p-6 sm:p-8 bg-white/5 border border-[#D4AF37]/20 rounded-2xl backdrop-blur-md hover:border-[#D4AF37]/60 hover:-translate-y-1 transition-all duration-300 shadow-xl"
+            >
+              <div className="font-serif text-3xl sm:text-5xl font-black text-[#D4AF37] leading-none mb-2">
                 {counts[index]}
                 {stat.number.includes("+") && "+"}
                 {stat.number.includes("%") && "%"}
               </div>
-              <div className={styles.statLabel}>{stat.label}</div>
+              <div className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-white/80">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

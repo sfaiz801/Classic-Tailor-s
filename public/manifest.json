@@ -1,0 +1,29 @@
+{
+  "name": "Classic Tailor's - Men's Bespoke Tailoring",
+  "short_name": "Classic Tailor's",
+  "description": "Premium Men's Bespoke Tailoring in Mirganj, Gopalganj, Bihar. Suits, Sherwanis, Kurta-Pajama & Bandi since 1995.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2C1810",
+  "theme_color": "#5C0015",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
