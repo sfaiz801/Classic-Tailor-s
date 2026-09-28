@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "../styles/globals.css";
+import { Toaster } from "@/components/ui/Toast";
 import { DataProvider } from "@/context/DataContext";
 
 export const viewport: Viewport = {
@@ -61,7 +62,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <DataProvider>{children}</DataProvider>
+        <DataProvider>
+          {children}
+          <Toaster />
+        </DataProvider>
       </body>
     </html>
   );

@@ -23,6 +23,7 @@ import {
   Sparkles,
   Crown
 } from 'lucide-react';
+import { toast } from '@/components/ui/Toast';
 import { useSiteData } from '@/context/DataContext';
 import { categories as defaultCategories } from '@/data/gallery';
 
@@ -38,15 +39,13 @@ export default function AdminDashboardPage() {
     addGalleryItem,
     deleteGalleryItem,
     updateShopInfo,
+    updateInquiryStatus,
     refreshData
   } = useSiteData();
 
   const [activeTab, setActiveTab] = useState<'gallery' | 'services' | 'offers' | 'shop' | 'inquiries'>('gallery');
   const [authChecking, setAuthChecking] = useState(true);
   const [currentUser, setCurrentUser] = useState<any>(null);
-
-  // Status feedback toast
-  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
   // New gallery item form state
   const [showAddGalleryModal, setShowAddGalleryModal] = useState(false);
@@ -92,14 +91,20 @@ export default function AdminDashboardPage() {
   }, [router]);
 
   const showNotification = (message: string, type: 'success' | 'error' = 'success') => {
-    setToast({ message, type });
-    setTimeout(() => setToast(null), 3500);
+    if (type === 'success') {
+      toast.success(message);
+    } else {
+      toast.error(message);
+    }
   };
 
   const handleLogout = async () => {
     try {
       await fetch('/api/admin/logout', { method: 'POST' });
-      window.location.href = '/admin/login';
+      toast.info('Logged out successfully');
+      setTimeout(() => {
+        window.location.href = '/admin/login';
+      }, 500);
     } catch (e) {
       window.location.href = '/admin/login';
     }
@@ -191,25 +196,6 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#1A0E0A] text-white selection:bg-[#D4AF37] selection:text-[#2C1810]">
-      {/* Toast Notification */}
-      <AnimatePresence>
-        {toast && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className={`fixed top-6 right-6 z-50 px-5 py-3.5 rounded-2xl shadow-2xl backdrop-blur-xl border flex items-center gap-3 text-sm font-medium ${
-              toast.type === 'success'
-                ? 'bg-emerald-950/90 border-emerald-500/50 text-emerald-200'
-                : 'bg-red-950/90 border-red-500/50 text-red-200'
-            }`}
-          >
-            {toast.type === 'success' ? <CheckCircle size={18} /> : <AlertCircle size={18} />}
-            <span>{toast.message}</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Top Luxury Navigation Bar */}
       <header className="sticky top-0 z-40 bg-[#2C1810]/95 backdrop-blur-xl border-b border-[#D4AF37]/20 shadow-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
@@ -797,15 +783,24 @@ export default function AdminDashboardPage() {
                         <td className="p-4">{inq.service}</td>
                         <td className="p-4 text-white/50">{inq.date}</td>
                         <td className="p-4">
-                          <span
-                            className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${
+                          <button
+                            onClick={async () => {
+                              const nextStatus: 'New' | 'Contacted' | 'Completed' =
+                                inq.status === 'New' ? 'Contacted' : inq.status === 'Contacted' ? 'Completed' : 'New';
+                              await updateInquiryStatus(inq.id, nextStatus);
+                              toast.success(`Inquiry marked as ${nextStatus}`);
+                            }}
+                            className={`px-2.5 py-1 rounded-full text-[10px] font-bold cursor-pointer hover:scale-105 transition-transform ${
                               inq.status === 'New'
                                 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                                : inq.status === 'Contacted'
+                                ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
                                 : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
                             }`}
+                            title="Click to toggle status"
                           >
-                            {inq.status}
-                          </span>
+                            {inq.status} ↻
+                          </button>
                         </td>
                         <td className="p-4 text-white/60 max-w-xs truncate">{inq.notes}</td>
                         <td className="p-4 text-right">

@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
-import { shopInfo } from "@/data/shop";
+import { toast } from "@/components/ui/Toast";
+import { useSiteData } from "@/context/DataContext";
 
 export default function Contact() {
+  const { shopInfo, addInquiry } = useSiteData();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -13,13 +15,30 @@ export default function Contact() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", phone: "", service: "", message: "" });
-    }, 4000);
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      toast.error("Kripya apna naam aur phone number zaroor enter karein.");
+      return;
+    }
+
+    try {
+      await addInquiry({
+        name: formData.name,
+        phone: formData.phone,
+        service: formData.service || "General Tailoring",
+        notes: formData.message || "Customer appointment enquiry"
+      });
+
+      setIsSubmitted(true);
+      toast.success("Shukriya! Aapka message receive ho gaya hai. Classic Tailor's team jald hi aapse contact karegi.");
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: "", phone: "", service: "", message: "" });
+      }, 4000);
+    } catch (err) {
+      toast.error("Message send nahi ho saka. Kripya direct call ya WhatsApp karein.");
+    }
   };
 
   const contactInfo = [
