@@ -134,7 +134,7 @@ export default function AdminLoginPage() {
                 </label>
                 <button
                   type="button"
-                  onClick={() => setPassword('ClassicTailor@1995')}
+                  onClick={() => setPassword('ClassicTailors@1995')}
                   className="text-[11px] text-[#D4AF37] hover:underline"
                 >
                   Use Default Passkey
@@ -162,7 +162,7 @@ export default function AdminLoginPage() {
               </div>
               <p className="text-[11px] text-[#E8DCC8]/50 mt-1.5 flex items-center gap-1">
                 <Sparkles size={12} className="text-[#D4AF37]" />
-                <span>Default passkey: <code>ClassicTailor@1995</code></span>
+                <span>Master passkey: <code>ClassicTailors@1995</code></span>
               </p>
             </div>
 

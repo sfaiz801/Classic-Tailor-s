@@ -1,8 +1,8 @@
 import crypto from 'crypto';
 
 export const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || 'classictailors.mir@gmail.com').toLowerCase().trim();
-export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'ClassicTailor@1995';
-export const JWT_SECRET = process.env.JWT_SECRET || 'classic-tailor-super-secret-key-mirganj-bihar-1995';
+export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'ClassicTailors@1995';
+export const JWT_SECRET = process.env.JWT_SECRET || 'classic-tailors-super-secret-key-mirganj-bihar-1995-masoom-faiz';
 
 export interface AdminUser {
   email: string;
