@@ -77,13 +77,13 @@ export default function AdminDashboardPage() {
       try {
         const res = await fetch('/api/admin/check-auth');
         const data = await res.json();
-        if (!res.ok || !data.authenticated) {
-          router.push('/admin/login');
+        if (!data.authenticated) {
+          window.location.href = '/admin/login';
           return;
         }
         setCurrentUser(data.user);
       } catch (err) {
-        router.push('/admin/login');
+        window.location.href = '/admin/login';
       } finally {
         setAuthChecking(false);
       }
@@ -99,9 +99,9 @@ export default function AdminDashboardPage() {
   const handleLogout = async () => {
     try {
       await fetch('/api/admin/logout', { method: 'POST' });
-      router.push('/admin/login');
+      window.location.href = '/admin/login';
     } catch (e) {
-      router.push('/admin/login');
+      window.location.href = '/admin/login';
     }
   };
 

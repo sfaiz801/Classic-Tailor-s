@@ -34,8 +34,8 @@ export default function AdminLoginPage() {
 
       setSuccess(true);
       setTimeout(() => {
-        router.push('/admin');
-      }, 1000);
+        window.location.href = '/admin';
+      }, 800);
     } catch (err: any) {
       setError(err.message || 'Login failed. Please check your credentials.');
     } finally {
