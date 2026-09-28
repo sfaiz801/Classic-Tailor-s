@@ -74,6 +74,11 @@ export default function Gallery() {
                 </span>
                 <h3 className="font-serif text-lg font-bold text-[#2C1810] mt-3 mb-1">
                   {item.title}
+                  {item.hindiTitle && (
+                    <span className="block text-xs font-semibold text-[#B8941F] font-hindi">
+                      ({item.hindiTitle})
+                    </span>
+                  )}
                 </h3>
                 <p className="text-xs text-[#8B7355] leading-relaxed">
                   {item.description}
@@ -107,8 +112,13 @@ export default function Gallery() {
               className="w-full max-h-[70vh] object-contain bg-black"
             />
             <div className="p-6 bg-gradient-to-t from-[#1A0E0A] to-[#2C1810] text-white">
-              <h3 className="font-serif text-2xl font-bold text-[#F4E4BC]">
-                {galleryItems.find((i) => i.id === selectedImage)?.title}
+              <h3 className="font-serif text-2xl font-bold text-[#F4E4BC] flex items-center gap-2">
+                <span>{galleryItems.find((i) => i.id === selectedImage)?.title}</span>
+                {galleryItems.find((i) => i.id === selectedImage)?.hindiTitle && (
+                  <span className="text-base text-[#D4AF37] font-normal">
+                    ({galleryItems.find((i) => i.id === selectedImage)?.hindiTitle})
+                  </span>
+                )}
               </h3>
               <p className="text-sm text-white/80 mt-1">
                 {galleryItems.find((i) => i.id === selectedImage)?.description}

@@ -1,6 +1,7 @@
 export interface GalleryItem {
   id: number;
   title: string;
+  hindiTitle?: string;
   category: string;
   image: string;
   description: string;
@@ -10,45 +11,86 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 1,
     title: "Royal Wedding Sherwani",
+    hindiTitle: "रॉयल शेरवानी",
     category: "Sherwani",
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600",
-    description: "Handcrafted royal sherwani with intricate detailing"
+    image: "/images/gallery/sherwani.jpg",
+    description: "Handcrafted ivory & gold groom sherwani with intricate zardozi embroidery and royal drape."
   },
   {
     id: 2,
-    title: "Executive 3-Piece Suit",
+    title: "Executive 2-Piece Coat-Pant",
+    hindiTitle: "कोट-पैंट सूट",
     category: "Suits",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600",
-    description: "Sharp navy 3-piece suit with tailored waistcoat"
+    image: "/images/gallery/coat-pant.jpg",
+    description: "Bespoke navy blue Italian cut suit crafted from Raymond pure wool with precision shoulder pad structuring."
   },
   {
     id: 3,
-    title: "Traditional Kurta-Pajama",
-    category: "Kurta",
-    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600",
-    description: "Premium pure cotton festive kurta-pajama"
+    title: "Royal 3-Piece Suit",
+    hindiTitle: "3 पीस सूट",
+    category: "3-Piece",
+    image: "/images/gallery/three-piece-suit.jpg",
+    description: "Magnificent 3-piece formal suit with tailored peak-lapel waistcoat, matching trousers, and bespoke silhouette."
   },
   {
     id: 4,
-    title: "Classic Bandi / Nehru Jacket",
-    category: "Bandi",
-    image: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=600",
-    description: "Elegantly tailored Nehru jacket over kurta"
+    title: "Traditional Kurta-Pajama",
+    hindiTitle: "कुर्ता-पाजामा",
+    category: "Kurta",
+    image: "/images/gallery/kurta-pajama.jpg",
+    description: "Tailored festive emerald green silk kurta with intricate gold neckline detailing and churidar pairing."
   },
   {
     id: 5,
-    title: "Tailored Formal Blazer",
-    category: "Blazer",
-    image: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=600",
-    description: "Custom tailored blazer with Italian cut lapel"
+    title: "Imperial Jodhpuri Bandhgala",
+    hindiTitle: "जोधपुरी सूट / बंदगला",
+    category: "Jodhpuri",
+    image: "/images/gallery/jodhpuri-suit.jpg",
+    description: "Midnight blue regal closed mandarin collar Jodhpuri suit with engraved metallic brass buttons."
   },
   {
     id: 6,
-    title: "Bespoke Shirt & Trousers",
+    title: "Heritage Silk Bandi / Nehru Jacket",
+    hindiTitle: "बंडी / नेहरू जैकेट",
+    category: "Bandi",
+    image: "/images/gallery/bandi-jacket.jpg",
+    description: "Rich maroon & gold brocade jacquard Bandi paired elegantly over a pristine white linen kurta."
+  },
+  {
+    id: 7,
+    title: "Distinguished Safari Suit",
+    hindiTitle: "सफारी सूट",
+    category: "Safari",
+    image: "/images/gallery/safari-suit.jpg",
+    description: "Classic four-flap pocket safari suit in premium breathable beige fabric with vintage authority cut."
+  },
+  {
+    id: 8,
+    title: "Bespoke Formal Shirt & Trousers",
+    hindiTitle: "फॉर्मल पैंट-शर्ट",
     category: "Shirt-Pant",
-    image: "https://images.unsplash.com/photo-1620012253295-c15c429fcc65?w=600",
-    description: "Sharp fit Raymond cotton shirt with tailored trousers"
+    image: "/images/gallery/shirt-pant.jpg",
+    description: "Crisp sky-blue Raymond cotton formal shirt with French cuffs and precision tailored charcoal trousers."
+  },
+  {
+    id: 9,
+    title: "Royal Velvet Evening Blazer",
+    hindiTitle: "ब्लेज़र",
+    category: "Blazer",
+    image: "/images/gallery/blazer.jpg",
+    description: "Luxury deep wine burgundy velvet blazer with satin peak lapels for galas, receptions, and red carpet events."
   }
 ];
 
-export const categories = ["All", "Suits", "Sherwani", "Kurta", "Bandi", "Blazer", "Shirt-Pant"];
+export const categories = [
+  "All",
+  "Sherwani",
+  "Suits",
+  "3-Piece",
+  "Kurta",
+  "Jodhpuri",
+  "Bandi",
+  "Safari",
+  "Shirt-Pant",
+  "Blazer"
+];
