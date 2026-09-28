@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, Mail, Eye, EyeOff, ShieldCheck, ArrowRight, Sparkles, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Lock, Mail, Eye, EyeOff, ShieldCheck, ArrowRight, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('classictailors.mir@gmail.com');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -109,7 +109,7 @@ export default function AdminLoginPage() {
             {/* Email Field */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-[#F4E4BC] mb-2">
-                Classic Tailor Gmail
+                Admin Email Address
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#D4AF37]/80">
@@ -120,7 +120,8 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  placeholder="classictailors.mir@gmail.com"
+                  autoComplete="email"
+                  placeholder="Enter registered email"
                   className="w-full pl-11 pr-4 py-3.5 bg-black/40 border border-[#D4AF37]/30 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 rounded-2xl text-white text-sm placeholder-white/30 transition-all outline-none"
                 />
               </div>
@@ -128,18 +129,9 @@ export default function AdminLoginPage() {
 
             {/* Password Field */}
             <div>
-              <div className="flex items-center justify-between mb-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#F4E4BC]">
-                  Master Passkey
-                </label>
-                <button
-                  type="button"
-                  onClick={() => setPassword('ClassicTailors@1995')}
-                  className="text-[11px] text-[#D4AF37] hover:underline"
-                >
-                  Use Default Passkey
-                </button>
-              </div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#F4E4BC] mb-2">
+                Master Password
+              </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#D4AF37]/80">
                   <Lock size={18} />
@@ -149,7 +141,8 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  placeholder="Enter Master Password"
+                  autoComplete="current-password"
+                  placeholder="Enter your password"
                   className="w-full pl-11 pr-11 py-3.5 bg-black/40 border border-[#D4AF37]/30 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 rounded-2xl text-white text-sm placeholder-white/30 transition-all outline-none"
                 />
                 <button
@@ -160,10 +153,6 @@ export default function AdminLoginPage() {
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
-              <p className="text-[11px] text-[#E8DCC8]/50 mt-1.5 flex items-center gap-1">
-                <Sparkles size={12} className="text-[#D4AF37]" />
-                <span>Master passkey: <code>ClassicTailors@1995</code></span>
-              </p>
             </div>
 
             {/* Error Message */}
