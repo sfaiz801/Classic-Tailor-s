@@ -1,0 +1,342 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Coat-Pant Suit",
+      "hindiTitle": "कोट-पैंट सूट",
+      "description": "Executive two-piece suits tailored with precision, perfect shoulder cut, and premium internal canvas structuring.",
+      "price": "Custom Quote",
+      "icon": "briefcase",
+      "image": "/images/gallery/coat-pant.webp",
+      "features": [
+        "Raymond & Siyaram's Fabric",
+        "Custom Lapel Styles",
+        "Precision Fit Guarantee",
+        "Formal & Business Wear"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "3 Piece Suit",
+      "hindiTitle": "3 पीस सूट",
+      "description": "Royal 3-piece formal suit with tailored waistcoat for grand weddings, receptions, and red-carpet events.",
+      "price": "Custom Quote",
+      "icon": "crown",
+      "image": "/images/gallery/three-piece-suit.webp",
+      "features": [
+        "Tailored Waistcoat",
+        "Premium Italian Cut",
+        "Slim & Regular Fitting",
+        "High-Grade Stitching"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Royal Sherwani",
+      "hindiTitle": "शेरवानी",
+      "description": "Handcrafted groom and wedding sherwanis designed for a majestic Indian royal look with perfect drape.",
+      "price": "Custom Quote",
+      "icon": "crown",
+      "image": "/images/gallery/sherwani.webp",
+      "features": [
+        "Wedding & Groom Specialist",
+        "Custom Embroidery & Cut",
+        "Traditional Royal Fit",
+        "Accessory Coordination"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Kurta-Pajama",
+      "hindiTitle": "कुर्ता-पाजामा",
+      "description": "Classic Indian kurta pajama and churidar stitched with ultra-comfortable cotton, linen, or festive silks.",
+      "price": "Custom Quote",
+      "icon": "shirt",
+      "image": "/images/gallery/kurta-pajama.webp",
+      "features": [
+        "Pathani & Straight Cuts",
+        "Churidar / Dhoti Pairing",
+        "Festive & Daily Wear",
+        "Breathable Fabrics"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Bandi / Nehru Jacket",
+      "hindiTitle": "बंडी",
+      "description": "Traditional sleeveless Nehru jackets and Bandis that add an instant royal touch over any kurta or shirt.",
+      "price": "Custom Quote",
+      "icon": "sparkles",
+      "image": "/images/gallery/bandi-jacket.webp",
+      "features": [
+        "Mandarin Collar Cut",
+        "Custom Pocket Styling",
+        "Silk, Tweed & Jacquard",
+        "Festive Occasions"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Shirt-Pant",
+      "hindiTitle": "शर्ट-पैंट",
+      "description": "Everyday formal and casual shirts and trousers stitched strictly to your personal body measurements.",
+      "price": "Custom Quote",
+      "icon": "scissors",
+      "image": "/images/gallery/shirt-pant.webp",
+      "features": [
+        "Custom Collar & Cuffs",
+        "Pleated or Flat Front Pants",
+        "Wrinkle-Resistant Fit",
+        "Daily & Office Comfort"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Blazer",
+      "hindiTitle": "ब्लेज़र",
+      "description": "Sharp casual and semi-formal blazers that pair effortlessly with jeans, chinos, or formal trousers.",
+      "price": "Custom Quote",
+      "icon": "award",
+      "image": "/images/gallery/blazer.webp",
+      "features": [
+        "Single & Double Breasted",
+        "Custom Button Accents",
+        "Lightweight Canvas",
+        "Modern Silhouette"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Safari Suit",
+      "hindiTitle": "सफारी सूट",
+      "description": "Timeless traditional safari suits designed for comfort, respect, and effortless vintage authority.",
+      "price": "Custom Quote",
+      "icon": "shirt",
+      "image": "/images/gallery/safari-suit.webp",
+      "features": [
+        "Classic Safari Pockets",
+        "Belt & Shoulder Flaps",
+        "Durable All-Day Wear",
+        "Distinguished Look"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Jodhpuri / Wedding Wear",
+      "hindiTitle": "जोधपुरी / वेडिंग वियर",
+      "description": "Royal imperial Jodhpuri Bandhgala and luxury bespoke wedding tailoring for grooms and family.",
+      "price": "Custom Quote",
+      "icon": "heart",
+      "image": "/images/gallery/jodhpuri-suit.webp",
+      "features": [
+        "Regal Mandarin Collar",
+        "Embossed Metallic Buttons",
+        "Priority Delivery",
+        "Final Fitting Sessions"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Casual & Linen Wear",
+      "hindiTitle": "केजुअल वियर",
+      "description": "Comfortable and stylish casual shirts, pure linen trousers, and semi-formal men's wear tailored to perfection.",
+      "price": "Custom Quote",
+      "icon": "users",
+      "image": "/images/gallery/shirt-pant.webp",
+      "features": [
+        "Relaxed Body Fitting",
+        "Breathable Linens & Cottons",
+        "Trendy Cuts",
+        "Durable Stitching"
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Royal Wedding Sherwani",
+      "hindiTitle": "रॉयल शेरवानी",
+      "category": "Sherwani",
+      "image": "/images/gallery/sherwani.webp",
+      "description": "Handcrafted ivory & gold groom sherwani with intricate zardozi embroidery and royal drape."
+    },
+    {
+      "id": 2,
+      "title": "Executive 2-Piece Coat-Pant",
+      "hindiTitle": "कोट-पैंट सूट",
+      "category": "Suits",
+      "image": "/images/gallery/coat-pant.webp",
+      "description": "Bespoke navy blue Italian cut suit crafted from Raymond pure wool with precision shoulder pad structuring."
+    },
+    {
+      "id": 3,
+      "title": "Royal 3-Piece Suit",
+      "hindiTitle": "3 पीस सूट",
+      "category": "3-Piece",
+      "image": "/images/gallery/three-piece-suit.webp",
+      "description": "Magnificent 3-piece formal suit with tailored peak-lapel waistcoat, matching trousers, and bespoke silhouette."
+    },
+    {
+      "id": 4,
+      "title": "Traditional Kurta-Pajama",
+      "hindiTitle": "कुर्ता-पाजामा",
+      "category": "Kurta",
+      "image": "/images/gallery/kurta-pajama.webp",
+      "description": "Tailored festive emerald green silk kurta with intricate gold neckline detailing and churidar pairing."
+    },
+    {
+      "id": 5,
+      "title": "Imperial Jodhpuri Bandhgala",
+      "hindiTitle": "जोधपुरी सूट / बंदगला",
+      "category": "Jodhpuri",
+      "image": "/images/gallery/jodhpuri-suit.webp",
+      "description": "Midnight blue regal closed mandarin collar Jodhpuri suit with engraved metallic brass buttons."
+    },
+    {
+      "id": 6,
+      "title": "Heritage Silk Bandi / Nehru Jacket",
+      "hindiTitle": "बंडी / नेहरू जैकेट",
+      "category": "Bandi",
+      "image": "/images/gallery/bandi-jacket.webp",
+      "description": "Rich maroon & gold brocade jacquard Bandi paired elegantly over a pristine white linen kurta."
+    },
+    {
+      "id": 7,
+      "title": "Distinguished Safari Suit",
+      "hindiTitle": "सफारी सूट",
+      "category": "Safari",
+      "image": "/images/gallery/safari-suit.webp",
+      "description": "Classic four-flap pocket safari suit in premium breathable beige fabric with vintage authority cut."
+    },
+    {
+      "id": 8,
+      "title": "Bespoke Formal Shirt & Trousers",
+      "hindiTitle": "फॉर्मल पैंट-शर्ट",
+      "category": "Shirt-Pant",
+      "image": "/images/gallery/shirt-pant.webp",
+      "description": "Crisp sky-blue Raymond cotton formal shirt with French cuffs and precision tailored charcoal trousers."
+    },
+    {
+      "id": 9,
+      "title": "Royal Velvet Evening Blazer",
+      "hindiTitle": "ब्लेज़र",
+      "category": "Blazer",
+      "image": "/images/gallery/blazer.webp",
+      "description": "Luxury deep wine burgundy velvet blazer with satin peak lapels for galas, receptions, and red carpet events."
+    }
+  ],
+  "shop": {
+    "name": "Classic Tailor's",
+    "tagline": "Custom Style • Perfect Fit • Since 1995",
+    "hindiTagline": "कपड़े नहीं... आपकी Personality सिलते हैं हम...",
+    "slogan": "Style Jo Aapko Alag Banaye...",
+    "owner": "Massom Ahmad",
+    "fullOwnerName": "Masoom Ahmad Siddique",
+    "address": {
+      "street": "Ganesh Cinema Road, Kalyani Chowk, Nagar Parishad Gali",
+      "landmark": "Kalyani Chowk, Nagar Parishad Gali",
+      "city": "Mirganj",
+      "district": "Gopalganj",
+      "state": "Bihar",
+      "pincode": "841438",
+      "full": "Ganesh Cinema Road, Kalyani Chowk, Nagar Parishad Gali, Mirganj, Bihar - 841438",
+      "mapQuery": "Classic Tailor's Mirganj"
+    },
+    "contact": {
+      "phone": "+91 9431255424",
+      "whatsapp": "+91 9431255424",
+      "altPhone": "+91 9905169149",
+      "email": "classictailors.mir@gmail.com"
+    },
+    "hours": {
+      "display": "10:00 AM – 9:00 PM",
+      "days": "Monday – Sunday (All 7 Days Open)",
+      "monday": "10:00 AM - 9:00 PM",
+      "tuesday": "10:00 AM - 9:00 PM",
+      "wednesday": "10:00 AM - 9:00 PM",
+      "thursday": "10:00 AM - 9:00 PM",
+      "friday": "10:00 AM - 9:00 PM",
+      "saturday": "10:00 AM - 9:00 PM",
+      "sunday": "10:00 AM - 9:00 PM"
+    },
+    "social": {
+      "instagram": "https://www.instagram.com/classic_tailors_mirganj/",
+      "instagramUsername": "classic_tailors_mirganj",
+      "facebook": "https://facebook.com/classictailors",
+      "youtube": "https://youtube.com/classictailors"
+    },
+    "offer": {
+      "badge": "Special Offer",
+      "discount": "₹100 OFF",
+      "title": "Instagram पर Follow करें और पाएँ ₹100 OFF",
+      "subtitle": "पहली सिलाई पर",
+      "condition": "Follow करने के बाद Instagram पर हमें दिखाएँ और छूट पाएँ",
+      "buttonText": "FOLLOW NOW",
+      "link": "https://www.instagram.com/classic_tailors_mirganj/"
+    },
+    "fabrics": [
+      {
+        "name": "Raymond",
+        "tagline": "Original Fabric"
+      },
+      {
+        "name": "Siyaram's",
+        "tagline": "Premium Quality"
+      }
+    ],
+    "usps": [
+      {
+        "title": "Perfect Fit",
+        "hindi": "बिल्कुल सही फिटिंग",
+        "desc": "हर नाप की पूरी गारंटी"
+      },
+      {
+        "title": "Custom Design",
+        "hindi": "आपकी पसंद के अनुसार",
+        "desc": "मनचाहा स्टाइल और कस्टमाइजेशन"
+      },
+      {
+        "title": "Premium Quality Fabric",
+        "hindi": "बेहतरीन कपड़ा",
+        "desc": "Raymond और Siyaram's ओरिजिनल फैब्रिक्स"
+      },
+      {
+        "title": "Modern & Traditional",
+        "hindi": "आधुनिक और पारंपरिक स्टाइल",
+        "desc": "सूट, शेरवानी से लेकर कैजुअल वियर तक"
+      },
+      {
+        "title": "On-Time Delivery",
+        "hindi": "समय पर डिलीवरी",
+        "desc": "आपका समय, हमारी प्राथमिकता"
+      }
+    ],
+    "established": 1995,
+    "experience": "31+ Years",
+    "experienceHindi": "31 साल पुरानी दुकान",
+    "onlyMens": "सिर्फ पुरुषों का Tailor (Men's Specialist)",
+    "singleBranch": "कोई शाखा / Branch नहीं (Mirganj में केवल एक ही दुकान)",
+    "managedBy": "Faiz Siddique"
+  },
+  "inquiries": [
+    {
+      "id": "inq-1",
+      "name": "Rahul Verma",
+      "phone": "+91 9876543210",
+      "service": "Coat-Pant Suit",
+      "date": "2026-09-25",
+      "status": "Contacted",
+      "notes": "Raymond fabric requirement for brother's wedding"
+    },
+    {
+      "id": "inq-2",
+      "name": "Amit Kumar",
+      "phone": "+91 9812345678",
+      "service": "Royal Sherwani",
+      "date": "2026-09-27",
+      "status": "New",
+      "notes": "Groom sherwani fitting needed by next month"
+    }
+  ],
+  "updatedAt": "2026-09-28T04:32:03.487Z"
+}

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "../styles/globals.css";
+import { DataProvider } from "@/context/DataContext";
 
 export const viewport: Viewport = {
   themeColor: "#5C0015",
@@ -59,7 +60,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <DataProvider>{children}</DataProvider>
+      </body>
     </html>
   );
 }

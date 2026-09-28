@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
-import { galleryItems, categories } from "@/data/gallery";
+import { useSiteData } from "@/context/DataContext";
+import { categories } from "@/data/gallery";
 
 export default function Gallery() {
+  const { galleryItems } = useSiteData();
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 

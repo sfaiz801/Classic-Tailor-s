@@ -146,9 +146,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <p>© {currentYear} Classic Tailor&apos;s. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Design &amp; Managed by <Heart size={13} className="text-red-500 fill-red-500" /> Faiz Siddique
-          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="/admin/login"
+              className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#D4AF37] transition-colors py-1 px-2 rounded-md hover:bg-white/5"
+            >
+              <span>🔐 Admin Portal</span>
+            </a>
+            <p className="flex items-center gap-1">
+              Design &amp; Managed by <Heart size={13} className="text-red-500 fill-red-500" /> Faiz Siddique
+            </p>
+          </div>
         </div>
       </div>
     </footer>

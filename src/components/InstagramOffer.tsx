@@ -1,9 +1,10 @@
 "use client";
 
 import { Instagram, CheckCircle2, ArrowRight } from "lucide-react";
-import { shopInfo } from "@/data/shop";
+import { useSiteData } from "@/context/DataContext";
 
 export default function InstagramOffer() {
+  const { shopInfo } = useSiteData();
   return (
     <section className="py-12 bg-gradient-to-b from-[#FFF8E7] to-[#FFF3D6] px-4">
       <div className="max-w-6xl mx-auto">

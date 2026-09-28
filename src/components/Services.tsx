@@ -1,7 +1,7 @@
 "use client";
 
 import { Crown, Shirt, Sparkles, Briefcase, Scissors, Heart, ArrowRight, Award, Users } from "lucide-react";
-import { services } from "@/data/services";
+import { useSiteData } from "@/context/DataContext";
 
 const iconMap: { [key: string]: React.ReactNode } = {
   crown: <Crown size={24} className="text-[#D4AF37]" />,
@@ -15,6 +15,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 export default function Services() {
+  const { services } = useSiteData();
   return (
     <section id="services" className="py-20 bg-[#FFF8E7] px-4">
       <div className="max-w-7xl mx-auto">
