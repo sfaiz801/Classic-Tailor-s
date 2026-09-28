@@ -1,18 +1,23 @@
 {
+  "id": "/?source=pwa",
   "name": "Classic Tailor's - Men's Bespoke Tailoring",
-  "short_name": "Classic Tailor's",
+  "short_name": "Classic Tailor",
   "description": "Premium Men's Bespoke Tailoring in Mirganj, Gopalganj, Bihar. Suits, Sherwanis, Kurta-Pajama & Bandi since 1995.",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "background_color": "#2C1810",
   "theme_color": "#5C0015",
   "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "categories": ["shopping", "lifestyle", "business"],
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "/icons/icon-512x512.png",
@@ -21,9 +26,32 @@
       "purpose": "any maskable"
     },
     {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Call Shop / कॉल करें",
+      "short_name": "Call",
+      "description": "Direct call to Classic Tailor's",
+      "url": "tel:+919431255424",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "View Gallery / गैलरी",
+      "short_name": "Gallery",
+      "description": "View sherwani and suit designs",
+      "url": "/#gallery",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
     }
   ]
 }

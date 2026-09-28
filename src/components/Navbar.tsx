@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
+import { Menu, X, Phone, MapPin, Clock, Download } from "lucide-react";
 import { shopInfo } from "@/data/shop";
+import { usePWAInstall } from "@/hooks/usePWAInstall";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { triggerInstall } = usePWAInstall();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,8 +106,15 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Call CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Desktop Call & Install CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={triggerInstall}
+              className="bg-[#2C1810] hover:bg-[#4A0E17] text-[#F4E4BC] border border-[#D4AF37]/50 font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-full flex items-center gap-1.5 shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer"
+            >
+              <Download size={14} className="text-[#D4AF37]" />
+              <span>Install App</span>
+            </button>
             <a
               href={`tel:${shopInfo.contact.phone}`}
               className="gold-gradient-bg text-[#2C1810] font-bold text-xs uppercase tracking-wider px-6 py-2.5 rounded-full flex items-center gap-2 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 active:translate-y-0"
@@ -144,7 +153,17 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 pt-4 border-t border-[#E8DCC8]">
+            <div className="mt-4 pt-4 border-t border-[#E8DCC8] space-y-2.5">
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  triggerInstall();
+                }}
+                className="w-full py-3 rounded-full bg-[#2C1810] text-[#F4E4BC] border-2 border-[#D4AF37] font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:scale-102 transition-transform cursor-pointer"
+              >
+                <Download size={16} className="text-[#D4AF37]" />
+                <span>📱 Install App (Direct Screen Pe)</span>
+              </button>
               <a
                 href={`tel:${shopInfo.contact.phone}`}
                 className="gold-gradient-bg text-[#2C1810] font-bold text-sm uppercase tracking-wider w-full py-3 rounded-full flex items-center justify-center gap-2 shadow-md"
